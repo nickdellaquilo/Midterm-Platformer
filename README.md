@@ -1,5 +1,12 @@
 # Midterm | Group Project | Platformer
 
+## [Project Guidelines](/Project%20Guidelines)
+
+## Milestones:
+- 10/14 - Design mockups, roles and tasks, working prototype.
+- 10/21 - Beta Build complete and ready for playtesting.
+- 10/28 - Published and Documented.
+
 ## Team Members
 - Nick Dell'Aquilo
 - 
