@@ -34,6 +34,10 @@
   - [ ] Enemies
   - [ ] Environment
 - [ ] User interface
+  - [ ] Title screen
+  - [ ] Game over
+  - [ ] Ending
+  - [ ] Pause menu
 
 ### Visuals
 - [ ] Player character
@@ -44,6 +48,9 @@
 - [ ] Levels
   - [ ] Terrain
   - [ ] Backgrounds
+- [ ] User interface
+  - [ ] Menus
+  - [ ] HUD
 
 ### Audio
 - [ ] Sound effects
