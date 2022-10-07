@@ -13,7 +13,7 @@
 - Member 3
 - Member 4
 
-## To Do
+## Tasks
 
 ### Design
 - [ ] Player character
