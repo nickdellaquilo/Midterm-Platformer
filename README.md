@@ -1,1 +1,2 @@
-# Midterm-Platformer
+# Midterm | Platformer
+
