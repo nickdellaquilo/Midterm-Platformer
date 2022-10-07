@@ -1,6 +1,6 @@
 # Midterm | Group Project | Platformer
 
-## [Project Guidelines](/Project%20Guidelines)
+## [Project Guidelines](/Project%20Guidelines.md)
 
 ## Milestones
 - 10/14 - Design mockups, roles and tasks, working prototype.
