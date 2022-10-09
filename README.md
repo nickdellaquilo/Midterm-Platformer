@@ -7,11 +7,11 @@
 - 10/21 - Beta Build complete and ready for playtesting.
 - 10/28 - Published and Documented.
 
-## Team Members
-- Nick Dell'Aquilo
-- Member 2
-- Member 3
-- Member 4
+## Group 2
+- Dell'Aquilo,Nick
+- Xiong,Justin
+- Li,Justin
+- Vong,Cameron
 
 ## Tasks
 
