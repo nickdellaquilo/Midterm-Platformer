@@ -8,10 +8,10 @@
 - 10/28 - Published and Documented.
 
 ## Group 2
-- Dell'Aquilo,Nick
-- Xiong,Justin
-- Li,Justin
-- Vong,Cameron
+- Nick Dell'Aquilo 
+- Justin Xiong 
+- Justin Li
+- Cameron Vong
 
 ## Tasks
 
