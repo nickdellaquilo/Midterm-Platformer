@@ -15,8 +15,7 @@
 
 ## Tasks
 
-
-## [Work log](/Worklog.md)
+### [Work log](/Worklog.md)
 
 ### Design
 - [ ] Player character
