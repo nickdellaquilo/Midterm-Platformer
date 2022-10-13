@@ -20,6 +20,7 @@
 ### Design
 - [ ] Player character
   - [ ] Movement
+    - [x] Basic walking & jumping
 - [ ] Obstacles
   - [ ] Enemies
   - [ ] Environment
@@ -31,6 +32,7 @@
 ### Programming
 - [ ] Player character
   - [ ] Movement
+    - [x] Basic walking & jumping
   - [ ] Player input
     - [ ] Keyboard
     - [ ] Gamepad
