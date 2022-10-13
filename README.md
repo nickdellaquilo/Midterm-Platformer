@@ -15,7 +15,7 @@
 
 ## Tasks
 
-### [Work log](/Worklog.md)
+### [Task Log](https://github.com/nickdellaquilo/Midterm-Platformer/edit/main/README.md#task-log-1)
 
 ### Design
 - [ ] Player character
@@ -68,3 +68,15 @@
   - [ ] Levels
 - [ ] Interface
   - [ ] Button press
+
+### Task Log
+
+| **Role** | **Task** | **Person** | **Date** |
+| -------- | -------- | ---------- | -------- |
+| Programming | Player character - basic movement | Nick | 10/07/22 |
+|  |  |  |  |
+| Design | Player character - movement | Nick |  |
+|  |  |  |  |
+| Visuals | UI - HUD | Nick | |
+|  |  |  |  |
+| Audio | SFX - Jump | Nick | |
