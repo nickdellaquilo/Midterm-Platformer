@@ -15,7 +15,7 @@
 
 ## Tasks
 
-### [Task Log](https://github.com/nickdellaquilo/Midterm-Platformer/edit/main/README.md#task-log-1)
+### [Task Log](https://github.com/nickdellaquilo/Midterm-Platformer/tree/main#task-log-1)
 
 ### Design
 - [ ] Player character
