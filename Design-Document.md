@@ -13,6 +13,10 @@
   * Kills enemies
     * Variable number of hits
     * Visual for taking damage & dying
+  * Basic shot
+    * Infinite ammo
+  * Powerful shot
+    * Ammo pickups
 
 <img src="https://user-images.githubusercontent.com/22899761/195915782-7d122116-4bfe-4dc0-822b-c550007039a6.png" width="400">
 
