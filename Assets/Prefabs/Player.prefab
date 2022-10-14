@@ -42,8 +42,9 @@ GameObject:
   - component: {fileID: 1271053429233496844}
   - component: {fileID: 6425498049387823556}
   - component: {fileID: 6425498049387823555}
-  - component: {fileID: 6425498049387823558}
   - component: {fileID: 5568317704095726161}
+  - component: {fileID: 4558146753988837345}
+  - component: {fileID: 1960779199174370751}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6001951833799260921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02850616, y: -0.118071675, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -108,12 +109,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: aafd10535aa27a947b3c41402eb8b79f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1e08a9ed35d1c23419b68ae86a1336f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 3.84, y: 3.84}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -131,7 +132,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.7853982
+  m_Mass: 6.0299997
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -140,22 +141,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &6425498049387823558
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6001951833799260921}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!114 &5568317704095726161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +163,51 @@ MonoBehaviour:
   numJumps: 1
   maxJumps: 1
   jumpForce: 500
-  grounded: 0
+  grounded: 1
+  spr_idle: {fileID: 21300000, guid: 1e08a9ed35d1c23419b68ae86a1336f4, type: 3}
+  spr_walk: {fileID: 21300000, guid: a39f6dd85a055e1448179f10577a45cd, type: 3}
+  spr_jump: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
+  spr_damage: {fileID: 21300000, guid: 9da9394d63bd83647a387612f7eb2d3f, type: 3}
+  spr_still: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
+  curr_sprite: {fileID: 0}
+--- !u!61 &4558146753988837345
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001951833799260921}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.18, y: -0.24}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 3.84}
+    newSize: {x: 3.84, y: 3.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8, y: 3.35}
+  m_EdgeRadius: 0
+--- !u!111 &1960779199174370751
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6001951833799260921}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

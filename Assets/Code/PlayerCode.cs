@@ -23,15 +23,26 @@ public class PlayerCode : MonoBehaviour
 
     Rigidbody2D _rigidbody;
 
+    SpriteRenderer player_SpriteRenderer;
+    public Sprite spr_idle;
+    public Sprite spr_walk;
+    public Sprite spr_jump;
+    public Sprite spr_damage;
+    public Sprite spr_still;
+
+    [SerializeField] Sprite curr_sprite;
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-
+        player_SpriteRenderer = GetComponent<SpriteRenderer>();
+        player_SpriteRenderer.sprite = spr_still;
     }
 
     void Update()
     {
         xSpeed = Input.GetAxisRaw("Horizontal") * speed;
+
         if (Input.GetButton("Run")) { xSpeed *= runMult; }
 
         grounded = Physics2D.OverlapCircle(feetTrans.position, .3f, groundLayer);
@@ -47,6 +58,12 @@ public class PlayerCode : MonoBehaviour
     void FixedUpdate()
     {
         _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-        
+
+        if      (xSpeed <  0 && grounded) { player_SpriteRenderer.flipX  = true;  }
+        else if (xSpeed >  0 && grounded) { player_SpriteRenderer.flipX  = false; }
+        else if (xSpeed == 0 && grounded) { player_SpriteRenderer.sprite = spr_idle; }
+
+
+        curr_sprite = player_SpriteRenderer.sprite;
     }
 }
