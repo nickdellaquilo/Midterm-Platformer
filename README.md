@@ -76,10 +76,10 @@
 | **Role** | **Task** | **Person** | **Date** |
 | -------- | -------- | ---------- | -------- |
 | Programming | Player character - basic movement | Nick | 10/07/22 |
-|  |  |  |  |
-| Design | Player character - movement | Nick |  |
-|  |  |  |  |
-| Visuals | UI - HUD | Nick |TO DO |
+| Programming | Implement character sprites | Nick | TO DO |
+| Design | Player character - sliding | |  |
+| Design | Player character - attacks |  |  |
+| Visuals | UI - HUD |  |  |
 |  |  |  |  |
 | Audio | SFX - Jump | Nick | TO DO |
 | Audio | Music - Level 1? | Cameron |  |
