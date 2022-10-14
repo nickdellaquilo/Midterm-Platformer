@@ -2,6 +2,8 @@
 
 ## [Project Guidelines](/Project%20Guidelines.md)
 
+## [Design Document](/Design-Document.md)
+
 ## Milestones
 - 10/14 - Design mockups, roles and tasks, working prototype.
 - 10/21 - Beta Build complete and ready for playtesting.
