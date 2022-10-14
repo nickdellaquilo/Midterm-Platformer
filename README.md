@@ -82,6 +82,6 @@
 | Audio | SFX - Jump | Nick | TO DO |
 | Audio | Music - Level 1? | Cameron |  |
 | Visual | Player - Character | Cameron | TO DO |
-| Visual | Player Character - Idle | Justin | |
-| Visual | Player Character - Run | Justin | |
-| Visual | Player Character - Damage | Justin | |
+| Visual | Player Character - Idle | Justin | 10/14 |
+| Visual | Player Character - Run | Justin | 10/14 |
+| Visual | Player Character - Damage | Justin | 10/14 |
