@@ -46,11 +46,11 @@
   - [ ] Pause menu
 
 ### Visuals
-- [ ] Player character
-  - [ ] Idle
-  - [ ] Run
+- [x] Player character
+  - [x] Idle
+  - [x] Run
   - [ ] Jump
-  - [ ] Damage
+  - [x] Damage
 - [ ] Levels
   - [ ] Terrain
   - [ ] Backgrounds
@@ -82,3 +82,6 @@
 | Audio | SFX - Jump | Nick | TO DO |
 | Audio | Music - Level 1? | Cameron |  |
 | Visual | Player - Character | Cameron | TO DO |
+| Visual | Player Character - Idle | Justin | |
+| Visual | Player Character - Run | Justin | |
+| Visual | Player Character - Damage | Justin | |
