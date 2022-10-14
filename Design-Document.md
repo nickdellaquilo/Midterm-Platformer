@@ -1,4 +1,4 @@
-# Design Ideas
+# Design Document
 
 ## Player Actions
 
