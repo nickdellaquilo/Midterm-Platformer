@@ -61,13 +61,13 @@
 ### Audio
 - [ ] Sound effects
   - [ ] Run
-  - [ ] Jump
+  - [x] Jump
   - [ ] Damage
 - [ ] Music
   - [ ] Title Sceen
-  - [ ] Levels
+  - [x] Level
 - [ ] Interface
-  - [ ] Button press
+  - [x] Button press
 
 ### Task Log
 
@@ -80,3 +80,5 @@
 | Visuals | UI - HUD | Nick | |
 |  |  |  |  |
 | Audio | SFX - Jump | Nick | |
+| Audio | Music - Level 1? | Cameron |  |
+| Visual | Player - Character | Cameron | TO DO |
