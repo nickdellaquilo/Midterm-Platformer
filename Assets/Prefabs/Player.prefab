@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 0
   m_Name: Feet
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -24,8 +24,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5068442573808215246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.13, y: -1.9, z: 0}
+  m_LocalScale: {x: 1.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1271053429233496844}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6425498049387823555}
   - component: {fileID: 5568317704095726161}
   - component: {fileID: 4558146753988837345}
-  - component: {fileID: 1960779199174370751}
+  - component: {fileID: 4753715578282363601}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -131,7 +131,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 1
+  m_UseAutoMass: 0
   m_Mass: 5.382
   m_LinearDrag: 0
   m_AngularDrag: 0.05
@@ -156,12 +156,12 @@ MonoBehaviour:
   feetTrans: {fileID: 313196993909540404}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 9
   speed: 5
   accel: 1
   runMult: 2
   maxJumps: 1
-  jumpForce: 500
+  jumpForce: 2500
   numJumps: 1
   grounded: 1
   spr_idle: {fileID: 21300000, guid: 1e08a9ed35d1c23419b68ae86a1336f4, type: 3}
@@ -170,6 +170,7 @@ MonoBehaviour:
   spr_damage: {fileID: 21300000, guid: 9da9394d63bd83647a387612f7eb2d3f, type: 3}
   spr_still: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
   curr_sprite: {fileID: 0}
+  fireLoc: {fileID: 0}
 --- !u!61 &4558146753988837345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -196,19 +197,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8, y: 2.99}
   m_EdgeRadius: 0.18
---- !u!111 &1960779199174370751
-Animation:
+--- !u!95 &4753715578282363601
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6001951833799260921}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 958da676c8d045d459125876c715e02e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

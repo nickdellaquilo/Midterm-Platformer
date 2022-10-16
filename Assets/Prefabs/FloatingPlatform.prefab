@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2153504905872687378}
   - component: {fileID: 2153504905872687376}
   - component: {fileID: 2153504905872687383}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FloatingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

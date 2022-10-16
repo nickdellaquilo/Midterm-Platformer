@@ -15,16 +15,10 @@ public class PlayerCode : MonoBehaviour
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
     private float xSpeed = 0;
-    //private float ySpeed = 0;
+    private float ySpeed = 0;
     Rigidbody2D _rigidbody;
-    SpriteRenderer player_SpriteRenderer;
-    public Sprite spr_idle;
-    public Sprite spr_walk;
-    public Sprite spr_jump;
-    public Sprite spr_damage;
-    public Sprite spr_still;
-    [SerializeField] Sprite curr_sprite;
     Animator _animator;
+    SpriteRenderer _renderer;
     public Transform fireLoc;
     Vector2 spawnPoint;
     bool isDead = false;
@@ -32,38 +26,50 @@ public class PlayerCode : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        player_SpriteRenderer = GetComponent<SpriteRenderer>();
-        player_SpriteRenderer.sprite = spr_still;
+        _animator = GetComponent<Animator>();
+        _renderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(feetTrans.position, .3f, groundLayer);
-        if (grounded) { numJumps = maxJumps; }
-        //_animator.SetBool("Grounded", grounded);
-        //_animator.SetFloat("Speed", Mathf.Abs(xSpeed));
+        grounded = Physics2D.OverlapCircle(feetTrans.position, 0.9f, groundLayer);
+        _animator.SetBool("Grounded", grounded);
+        //if (grounded) { numJumps = maxJumps; }
         xSpeed = Input.GetAxisRaw("Horizontal") * speed;
-        if (Input.GetButton("Run")) { xSpeed *= runMult; }
-        
-        
-        if (Input.GetButtonDown("Jump") && numJumps > 0)
+        if (Input.GetButton("Run"))
         {
+            xSpeed *= runMult;
+            _animator.SetBool("Shoot", true);
+        }
+        else { _animator.SetBool("Shoot", false); }
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            _animator.SetBool("Jump", true);
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
-            numJumps--;
         }
         if (Input.GetButtonDown("Fire1"))
         {  
             _animator.SetTrigger("Shoot");
         }
+        if (grounded)
+        {
+            _animator.SetBool("Jump", false);
+            
+        }
     }
 
     void FixedUpdate()
     {
-        _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+        ySpeed = _rigidbody.velocity.y;
+        _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
 
-        if ((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0)) { transform.localScale *= new Vector2 (-1, 1); }
+        if ((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
+        {
+            transform.localScale *= new Vector2 (-1, 1);
+        }
 
-        curr_sprite = player_SpriteRenderer.sprite; //doesn't actually change any sprites, just for debug purposes
+        _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
+        _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
