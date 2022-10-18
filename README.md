@@ -55,7 +55,7 @@
   - [x] Damage
 - [ ] Levels
   - [ ] Terrain
-  - [ ] Backgrounds
+  - [x] Backgrounds
 - [ ] User interface
   - [ ] Menus
   - [ ] HUD
@@ -66,7 +66,7 @@
   - [x] Jump
   - [ ] Damage
 - [ ] Music
-  - [ ] Title Sceen
+  - [x] Title Sceen
   - [x] Level
 - [ ] Interface
   - [x] Button press
@@ -87,3 +87,5 @@
 | Visual | Player Character - Idle | Justin | 10/14 |
 | Visual | Player Character - Run | Justin | 10/14 |
 | Visual | Player Character - Damage | Justin | 10/14 |
+| Audio | Background Music 2 | Cameron | 10/18 |
+| Visual | Backgrounds | Cameron | 10/18 |
