@@ -39,7 +39,7 @@
     - [ ] Keyboard
     - [ ] Gamepad
 - [ ] Obstacles
-  - [ ] Enemies
+  - [x] Enemies
   - [ ] Environment
 - [ ] User interface
   - [ ] Title screen
@@ -77,6 +77,7 @@
 | -------- | -------- | ---------- | -------- |
 | Programming | Player character - basic movement | Nick | 10/07/22 |
 | Programming | Implement character sprites | Nick | TO DO |
+| Programming | Enemy attack | Jus | 10/17/22 |
 | Design | Player character - sliding | |  |
 | Design | Player character - attacks |  |  |
 | Visuals | UI - HUD |  |  |
