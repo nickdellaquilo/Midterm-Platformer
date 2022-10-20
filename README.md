@@ -75,9 +75,9 @@
 
 | **Role** | **Task** | **Person** | **Date** |
 | -------- | -------- | ---------- | -------- |
-| Programming | Player character - basic movement | Nick | 10/07/22 |
-| Programming | Implement character sprites | Nick | TO DO |
-| Programming | Enemy attack | Jus | 10/17/22 |
+| Programming | Player character - basic movement | Nick | 10/07 |
+| Programming | Implement character sprites | Nick | 10/16 |
+| Programming | Enemy attack | Jus | 10/17 |
 | Design | Player character - sliding | |  |
 | Design | Player character - attacks |  |  |
 | Visuals | UI - HUD |  |  |
