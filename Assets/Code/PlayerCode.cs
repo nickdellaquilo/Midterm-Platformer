@@ -14,6 +14,7 @@ public class PlayerCode : MonoBehaviour
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
+    private float slideSpeed = 8f;
     private float xSpeed = 0;
     private float ySpeed = 0;
     Rigidbody2D _rigidbody;
@@ -56,6 +57,17 @@ public class PlayerCode : MonoBehaviour
             _animator.SetBool("Jump", false);
             
         }
+        if (Input.GetButtonDown("Slide")) {
+            //_animator.SetBool("Slide", true);
+            Debug.Log("Print Slide");
+            if (xSpeed >= 0) {
+                _rigidbody.AddForce(Vector2.right * slideSpeed);
+            }
+            else {
+                _rigidbody.AddForce(Vector2.left * slideSpeed);
+            }
+            //StartCoroutine("SlideEnd");
+        }
     }
 
     void FixedUpdate()
@@ -86,6 +98,11 @@ public class PlayerCode : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isDead = false;
         spawnPoint = other.transform.position;
+    }
+
+    IEnumerator SlideEnd() {
+        yield return new WaitForSeconds(0.5f);
+        _animator.Play("Idle");
     }
 
 }
