@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthCode : MonoBehaviour
 {
-    [SerializeField] private GameObject[] hearts;
+    [SerializeField] public GameObject[] hearts;
     private int life;
     private bool dead;
     private Animator anim;
