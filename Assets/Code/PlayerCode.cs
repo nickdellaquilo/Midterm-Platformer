@@ -6,16 +6,17 @@ public class PlayerCode : MonoBehaviour
 {
     public Transform feetTrans;
     public LayerMask groundLayer;
-    [SerializeField] public int speed = 5;
-    [SerializeField] public int accel = 1;
-    [SerializeField] public int runMult = 2;
+    [SerializeField] public float speed = 10;
+    [SerializeField] public float accel = 1;
+    [SerializeField] public float runMult = 2;
+    [SerializeField] public float slideSpeed = 50;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
     //Slide stuff
-    public float slideSpeed = 20;
+    
     public float maxSpeed = 120;
     public float sspeed = 0;
     // end of slide
@@ -47,7 +48,7 @@ public class PlayerCode : MonoBehaviour
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
 
-        if (Input.GetButton("Run"))
+        if (Input.GetButton("Run") && !sliding)
         {
             xSpeed *= runMult;
             _animator.SetBool("Shoot", true);
@@ -108,7 +109,7 @@ public class PlayerCode : MonoBehaviour
         if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
         else{ 
             //xSpeed *= 0.999f;
-            xSpeed = Mathf.Lerp(xSpeed, 5, 0.05f);
+            xSpeed = Mathf.Lerp(xSpeed, 10, 0.05f);
              }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
