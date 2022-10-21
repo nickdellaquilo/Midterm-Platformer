@@ -41,7 +41,8 @@ public class PlayerCode : MonoBehaviour
         ySpeed = _rigidbody.velocity.y;
         _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
-        
+        _animator.SetBool("Slide", sliding);
+
         if (Input.GetButton("Run"))
         {
             xSpeed *= runMult;
@@ -65,9 +66,10 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Slide"))
         {
             Debug.Log("Print Slide");
-            _animator.SetTrigger("Slide");
-            if (xSpeed > 0) 
+            //_animator.SetTrigger("Slide");
+            sliding = true;
             
+            if (xSpeed > 0) 
             {
                 _rigidbody.AddForce(Vector2.right * slideSpeed);
                 
@@ -78,9 +80,10 @@ public class PlayerCode : MonoBehaviour
             }
             //StartCoroutine("SlideEnd");
         }
-        if (xSpeed < 3)
+        if (Mathf.Abs(xSpeed) <= speed)
         {
-            _animator.ResetTrigger("Slide");
+            //_animator.ResetTrigger("Slide");
+            sliding = false;
         }
     }
 
