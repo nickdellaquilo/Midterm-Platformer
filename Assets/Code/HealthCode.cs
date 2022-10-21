@@ -33,7 +33,7 @@ public class HealthCode : MonoBehaviour
             hearts[life].gameObject.SetActive(false);
             if (life < 1)
             {
-                isDead = true;
+                dead = true;
             }
             
         }
