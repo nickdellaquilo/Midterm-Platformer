@@ -38,6 +38,10 @@ public class PlayerCode : MonoBehaviour
         _animator.SetBool("Grounded", grounded);
         //if (grounded) { numJumps = maxJumps; }
         xSpeed = Input.GetAxisRaw("Horizontal") * speed;
+        ySpeed = _rigidbody.velocity.y;
+        _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
+        _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
+        
         if (Input.GetButton("Run"))
         {
             xSpeed *= runMult;
@@ -61,10 +65,12 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Slide"))
         {
             Debug.Log("Print Slide");
-            if (xSpeed > speed) 
+            _animator.SetTrigger("Slide");
+            if (xSpeed > 0) 
+            
             {
                 _rigidbody.AddForce(Vector2.right * slideSpeed);
-                _animator.SetBool("Slide", true);
+                
             }
             else
             {
@@ -72,21 +78,20 @@ public class PlayerCode : MonoBehaviour
             }
             //StartCoroutine("SlideEnd");
         }
-        else { _animator.SetBool("Slide", false); }
+        if (xSpeed < 3)
+        {
+            _animator.ResetTrigger("Slide");
+        }
     }
 
     void FixedUpdate()
     {
-        ySpeed = _rigidbody.velocity.y;
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
 
         if ((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
         {
             transform.localScale *= new Vector2 (-1, 1);
         }
-
-        _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
-        _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -108,9 +113,11 @@ public class PlayerCode : MonoBehaviour
         spawnPoint = other.transform.position;
     }
 
+    /*
     IEnumerator SlideEnd() {
         yield return new WaitForSeconds(0.5f);
         _animator.Play("Idle");
     }
+    */
 
 }
