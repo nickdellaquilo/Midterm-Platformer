@@ -18,11 +18,11 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             //enable this after having the animation
-            //anim.SetTrigger("");
+            anim.SetTrigger("hurt");
         } else {
             if (!dead){
                 //enable this after having the animation
-                //anim.SetTrigger("die");
+                anim.SetTrigger("die");
 
                 //for Enemy
                 if (GetComponent<EnemyPatrol>() != null)
