@@ -6,7 +6,7 @@ public class PlayerCode : MonoBehaviour
 {
     public Transform feetTrans;
     public LayerMask groundLayer;
-    [SerializeField] public float speed = 10.0f;
+    [SerializeField] public float speed = 7.5f;
     [SerializeField] public float accel = 1.0f;
     [SerializeField] public float runMult = 2.0f;
     [SerializeField] public int maxJumps = 1;
@@ -14,7 +14,7 @@ public class PlayerCode : MonoBehaviour
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
-    private float slideSpeed = 50.0f;
+    private float slideSpeed = 25.0f;
     private float xSpeed = 0.0f;
     private float ySpeed = 0.0f;
     Rigidbody2D _rigidbody;
