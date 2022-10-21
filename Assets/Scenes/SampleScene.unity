@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 165068599}
   - component: {fileID: 165068598}
   - component: {fileID: 165068597}
+  - component: {fileID: 165068601}
   m_Layer: 7
   m_Name: enemyIdle
   m_TagString: enemy
@@ -255,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1140379935
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf90b41807b224f739ea7c1466ce034d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -269,6 +270,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &165068601
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165068595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c37dc46330013e346aec1ccfe99f8ca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &275721967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6001951833799260921, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
@@ -685,8 +706,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
     - target: {fileID: 6425498049387823556, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425498049387823556, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425498049387823556, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1140379935
       objectReference: {fileID: 0}
     - target: {fileID: 6425498049387823556, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -2011,10 +2040,10 @@ PrefabInstance:
     - target: {fileID: 9129010594438802605, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 165068601}
     - target: {fileID: 9129010594438802605, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 165068596}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
