@@ -14,7 +14,11 @@ public class PlayerCode : MonoBehaviour
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
-    private float slideSpeed = 8f;
+    //Slide stuff
+    public float slideSpeed = 20;
+    public float maxSpeed = 120;
+    public float sspeed = 0;
+    // end of slide
     private float xSpeed = 0;
     private float ySpeed = 0;
     Rigidbody2D _rigidbody;
@@ -65,18 +69,30 @@ public class PlayerCode : MonoBehaviour
         }
         if (Input.GetButtonDown("Slide"))
         {
-            Debug.Log("Print Slide");
+            Debug.Log(xSpeed);
             //_animator.SetTrigger("Slide");
             sliding = true;
             
             if (xSpeed > 0) 
             {
-                _rigidbody.AddForce(Vector2.right * slideSpeed);
-                
+                if (sspeed < maxSpeed) {
+                    sspeed += slideSpeed * Time.deltaTime;
+                }
+                xSpeed += sspeed * Time.deltaTime;
+                //xSpeed *= slideSpeed;
+                //_rigidbody.AddForce(Vector2.right * slideSpeed);
+
+                Debug.Log(xSpeed);
             }
             else
             {
-                _rigidbody.AddForce(Vector2.left * slideSpeed);
+                if (sspeed < maxSpeed) {
+                    sspeed += slideSpeed * Time.deltaTime;
+                }
+                xSpeed += sspeed * Time.deltaTime;
+                //xSpeed *= slideSpeed;
+                //_rigidbody.AddForce(Vector2.left * slideSpeed);
+                Debug.Log(xSpeed);
             }
             //StartCoroutine("SlideEnd");
         }
