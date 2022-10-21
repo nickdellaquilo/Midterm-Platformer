@@ -6,17 +6,17 @@ public class PlayerCode : MonoBehaviour
 {
     public Transform feetTrans;
     public LayerMask groundLayer;
-    [SerializeField] public int speed = 5;
-    [SerializeField] public int accel = 1;
-    [SerializeField] public int runMult = 2;
+    [SerializeField] public float speed = 10.0f;
+    [SerializeField] public float accel = 1.0f;
+    [SerializeField] public float runMult = 2.0f;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
-    private float slideSpeed = 8f;
-    private float xSpeed = 0;
-    private float ySpeed = 0;
+    private float slideSpeed = 50.0f;
+    private float xSpeed = 0.0f;
+    private float ySpeed = 0.0f;
     Rigidbody2D _rigidbody;
     Animator _animator;
     SpriteRenderer _renderer;
@@ -37,13 +37,15 @@ public class PlayerCode : MonoBehaviour
         grounded = Physics2D.OverlapCircle(feetTrans.position, 0.9f, groundLayer);
         _animator.SetBool("Grounded", grounded);
         //if (grounded) { numJumps = maxJumps; }
-        xSpeed = Input.GetAxisRaw("Horizontal") * speed;
         ySpeed = _rigidbody.velocity.y;
         _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
+        
+        if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
+        else { xSpeed *= 0.999f; }
 
-        if (Input.GetButton("Run"))
+        if (Input.GetButton("Run") && !sliding)
         {
             xSpeed *= runMult;
             _animator.SetBool("Shoot", true);
@@ -63,28 +65,40 @@ public class PlayerCode : MonoBehaviour
             _animator.SetBool("Jump", false);
             
         }
-        if (Input.GetButtonDown("Slide"))
+        if (Input.GetButtonDown("Slide") && !sliding && Mathf.Abs(xSpeed) >= speed)
         {
             Debug.Log("Print Slide");
             //_animator.SetTrigger("Slide");
-            sliding = true;
+
+            //xSpeed *= 3;
+
             
             if (xSpeed > 0) 
             {
-                _rigidbody.AddForce(Vector2.right * slideSpeed);
-                
+                //_rigidbody.AddForce(Vector2.right * slideSpeed);
+                xSpeed = slideSpeed;
             }
             else
             {
-                _rigidbody.AddForce(Vector2.left * slideSpeed);
+                //_rigidbody.AddForce(Vector2.left * slideSpeed);
+                xSpeed = -slideSpeed;
             }
+            
+
             //StartCoroutine("SlideEnd");
+            sliding = true;
         }
         if (Mathf.Abs(xSpeed) <= speed)
         {
             //_animator.ResetTrigger("Slide");
             sliding = false;
         }
+        /*
+        if (sliding)
+        {
+            
+        }
+        */
     }
 
     void FixedUpdate()
