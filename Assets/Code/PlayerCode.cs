@@ -23,6 +23,7 @@ public class PlayerCode : MonoBehaviour
     public Transform fireLoc;
     Vector2 spawnPoint;
     bool isDead = false;
+    bool sliding = false;
 
     void Start()
     {
@@ -57,17 +58,21 @@ public class PlayerCode : MonoBehaviour
             _animator.SetBool("Jump", false);
             
         }
-        if (Input.GetButtonDown("Slide")) {
-            //_animator.SetBool("Slide", true);
+        if (Input.GetButtonDown("Slide"))
+        {
             Debug.Log("Print Slide");
-            if (xSpeed >= 0) {
+            if (xSpeed > speed) 
+            {
                 _rigidbody.AddForce(Vector2.right * slideSpeed);
+                _animator.SetBool("Slide", true);
             }
-            else {
+            else
+            {
                 _rigidbody.AddForce(Vector2.left * slideSpeed);
             }
             //StartCoroutine("SlideEnd");
         }
+        else { _animator.SetBool("Slide", false); }
     }
 
     void FixedUpdate()

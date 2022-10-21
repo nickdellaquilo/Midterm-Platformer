@@ -164,12 +164,6 @@ MonoBehaviour:
   jumpForce: 2500
   numJumps: 1
   grounded: 1
-  spr_idle: {fileID: 21300000, guid: 1e08a9ed35d1c23419b68ae86a1336f4, type: 3}
-  spr_walk: {fileID: 21300000, guid: a39f6dd85a055e1448179f10577a45cd, type: 3}
-  spr_jump: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
-  spr_damage: {fileID: 21300000, guid: 9da9394d63bd83647a387612f7eb2d3f, type: 3}
-  spr_still: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
-  curr_sprite: {fileID: 0}
   fireLoc: {fileID: 0}
 --- !u!61 &4558146753988837345
 BoxCollider2D:
