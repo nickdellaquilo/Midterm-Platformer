@@ -41,9 +41,6 @@ public class PlayerCode : MonoBehaviour
         _animator.SetFloat("xSpeed", Mathf.Abs(xSpeed));
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
-        
-        if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
-        else { xSpeed *= 0.999f; }
 
         if (Input.GetButton("Run") && !sliding)
         {
@@ -103,12 +100,20 @@ public class PlayerCode : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
+        else{ 
+            //xSpeed *= 0.999f;
+            xSpeed = Mathf.Lerp(xSpeed, 5, 0.05f);
+             }
+
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
 
         if ((xSpeed < 0 && transform.localScale.x > 0) || (xSpeed > 0 && transform.localScale.x < 0))
         {
             transform.localScale *= new Vector2 (-1, 1);
         }
+
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
