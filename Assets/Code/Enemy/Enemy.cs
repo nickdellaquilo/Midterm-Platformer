@@ -7,10 +7,10 @@ public class Enemy : MonoBehaviour
     [Header ("Attack Inpus")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
 
     [Header ("Collider Inputs")]
+    [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
     
     [Header ("Player Layers")]
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     //referrance added here
     private Animator anim;
-    private Health playerHealth;
+    private HealthCode playerHealth;
 
     private EnemyPatrol enemyPatrol;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
             if(cooldownTimer >= attackCooldown){
                 cooldownTimer = 0;
                 //update this following line after having an animation for enemy
-                anim.SetTrigger("Melee");
+                anim.SetTrigger("attack");
             }
         }
 
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
         if(hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            playerHealth = hit.transform.GetComponent<HealthCode>();
 
         return hit.collider != null;
     }
