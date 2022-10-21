@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header ("Attack Inpus")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
+
+    [Header ("Collider Inputs")]
     [SerializeField] private BoxCollider2D boxCollider;
+    
+    [Header ("Player Layers")]
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
@@ -16,8 +21,11 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private Health playerHealth;
 
+    private EnemyPatrol enemyPatrol;
+
     private void Awake(){
         anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
     
     private void Update()
@@ -31,6 +39,10 @@ public class Enemy : MonoBehaviour
                 //update this following line after having an animation for enemy
                 anim.SetTrigger("Melee");
             }
+        }
+
+        if(enemyPatrol != null){
+            enemyPatrol.enabled = !PlayerInSight();
         }
     }
 

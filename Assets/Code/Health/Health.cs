@@ -22,7 +22,14 @@ public class Health : MonoBehaviour
         } else {
             if (!dead){
                 //enable this after having the animation
-                //anim.SetTrigger("");
+                //anim.SetTrigger("die");
+
+                //for Enemy
+                if (GetComponent<EnemyPatrol>() != null)
+                    GetComponent<EnemyPatrol>().enabled = false;
+                if (GetComponent<Enemy>() != null)
+                    GetComponent<Enemy>().enabled = false;
+
                 dead = true;
             }
         }
