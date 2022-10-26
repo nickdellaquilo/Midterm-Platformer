@@ -133,10 +133,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5.382
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -158,13 +158,16 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 9
-  speed: 5
+  speed: 10
   accel: 1
   runMult: 2
+  slideSpeed: 50
   maxJumps: 1
   jumpForce: 2500
   numJumps: 1
   grounded: 1
+  maxSpeed: 120
+  sspeed: 0
   fireLoc: {fileID: 0}
 --- !u!61 &4558146753988837345
 BoxCollider2D:
