@@ -163,7 +163,7 @@ MonoBehaviour:
   runMult: 2
   slideSpeed: 50
   maxJumps: 1
-  jumpForce: 2500
+  jumpForce: 3000
   numJumps: 1
   grounded: 1
   maxSpeed: 120

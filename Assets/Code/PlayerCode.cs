@@ -12,13 +12,9 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public float slideSpeed = 50;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
-    public int numJumps = 1;
+    public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
-    //Slide stuff
-    public float maxSpeed = 120;
-    public float sspeed = 0;
-    // end of slide
     private float xSpeed = 0;
     private float ySpeed = 0;
     Rigidbody2D _rigidbody;
@@ -28,6 +24,7 @@ public class PlayerCode : MonoBehaviour
     Vector2 spawnPoint;
     bool isDead = false;
     bool sliding = false;
+    bool running = false;
 
     void Start()
     {
@@ -49,67 +46,56 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButton("Run") && !sliding)
         {
-            xSpeed = speed * runMult;
-            _animator.SetBool("Shoot", true);
+            running = true;
         }
-        else { _animator.SetBool("Shoot", false); }
+        else
+        {
+            running = false;
+        }
+
         if (Input.GetButtonDown("Jump") && grounded)
         {
             _animator.SetBool("Jump", true);
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
         }
+
         if (Input.GetButtonDown("Fire1"))
         {  
             _animator.SetTrigger("Shoot");
         }
-        if (grounded)
+        else { _animator.ResetTrigger("Shoot"); }
+
+        if (Input.GetButtonDown("Slide") && grounded && Mathf.Abs(xSpeed) >= speed)
         {
-            _animator.SetBool("Jump", false);
             
-        }
-        if (Input.GetButtonDown("Slide"))
-        {
-            Debug.Log(xSpeed);
-            //_animator.SetTrigger("Slide");
             sliding = true;
+            _animator.SetBool("Slide", sliding);
             
             if (xSpeed > 0) 
             {
-                if (sspeed < maxSpeed) {
-                    sspeed += slideSpeed * Time.deltaTime;
-                }
-                xSpeed += sspeed * Time.deltaTime;
-                //xSpeed *= slideSpeed;
-                //_rigidbody.AddForce(Vector2.right * slideSpeed);
-
-                Debug.Log(xSpeed);
+                _rigidbody.AddForce(Vector2.right * slideSpeed);
             }
             else
             {
-                if (sspeed < maxSpeed) {
-                    sspeed += slideSpeed * Time.deltaTime;
-                }
-                xSpeed += sspeed * Time.deltaTime;
-                //xSpeed *= slideSpeed;
-                //_rigidbody.AddForce(Vector2.left * slideSpeed);
-                Debug.Log(xSpeed);
+                _rigidbody.AddForce(Vector2.left  * slideSpeed);
             }
-            //StartCoroutine("SlideEnd");
+            Debug.Log(xSpeed);
         }
         if (Mathf.Abs(xSpeed) <= speed)
         {
-            //_animator.ResetTrigger("Slide");
             sliding = false;
+            _animator.SetBool("Slide", sliding);
         }
     }
 
     void FixedUpdate()
     {
-        if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
-        else{ 
-            //xSpeed *= 0.999f;
-            xSpeed = Mathf.Lerp(xSpeed, 10, 0.05f);
-             }
+        if (!sliding)
+        {
+            xSpeed = Input.GetAxisRaw("Horizontal") * speed;
+            if (running) { xSpeed *= runMult; }
+        }
+        else { xSpeed = Mathf.Lerp(xSpeed, speed, 0.025f); }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
 
