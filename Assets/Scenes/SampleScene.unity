@@ -658,6 +658,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: numJumps
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: spr_idle
       value: 
       objectReference: {fileID: 21300000, guid: 7557dcac01f5c6a4ead07d7602b25c46, type: 3}
@@ -666,16 +670,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: feetTrans
+      value: 
+      objectReference: {fileID: 1894637210}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: jumpForce
-      value: 5000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: slideSpeed
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6001951833799260921, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_Name
@@ -687,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6425498049387823555, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_Mass
-      value: 5.382
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6425498049387823555, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_BodyType
@@ -698,8 +706,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6425498049387823555, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6425498049387823555, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_UseAutoMass
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6425498049387823555, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_GravityScale
@@ -1450,6 +1462,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1894637210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 313196993909540404, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+  m_PrefabInstance: {fileID: 603245671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1969983464
 GameObject:
   m_ObjectHideFlags: 0

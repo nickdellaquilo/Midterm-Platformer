@@ -12,14 +12,10 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public float slideSpeed = 50;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
-    public int numJumps = 0;
+    public int numJumps = 1;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
     //Slide stuff
-<<<<<<< HEAD
-    
-=======
->>>>>>> slide-working
     public float maxSpeed = 120;
     public float sspeed = 0;
     // end of slide
@@ -112,11 +108,7 @@ public class PlayerCode : MonoBehaviour
         if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
         else{ 
             //xSpeed *= 0.999f;
-<<<<<<< HEAD
             xSpeed = Mathf.Lerp(xSpeed, 10, 0.05f);
-=======
-            xSpeed = Mathf.Lerp(xSpeed, 10, 0.025f);
->>>>>>> slide-working
              }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
