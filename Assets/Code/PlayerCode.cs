@@ -16,7 +16,10 @@ public class PlayerCode : MonoBehaviour
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
     //Slide stuff
+<<<<<<< HEAD
     
+=======
+>>>>>>> slide-working
     public float maxSpeed = 120;
     public float sspeed = 0;
     // end of slide
@@ -50,7 +53,7 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButton("Run") && !sliding)
         {
-            xSpeed *= runMult;
+            xSpeed = speed * runMult;
             _animator.SetBool("Shoot", true);
         }
         else { _animator.SetBool("Shoot", false); }
@@ -109,7 +112,11 @@ public class PlayerCode : MonoBehaviour
         if (!sliding) { xSpeed = Input.GetAxisRaw("Horizontal") * speed; }
         else{ 
             //xSpeed *= 0.999f;
+<<<<<<< HEAD
             xSpeed = Mathf.Lerp(xSpeed, 10, 0.05f);
+=======
+            xSpeed = Mathf.Lerp(xSpeed, 10, 0.025f);
+>>>>>>> slide-working
              }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
