@@ -5,13 +5,19 @@ using UnityEngine;
 public class PlayerCode : MonoBehaviour
 {
     public Transform feetTrans;
+    public Transform fireLoc;
     public LayerMask groundLayer;
+    public GameObject shotPrefab;
+    public GameObject meleePrefab;
     [SerializeField] public float speed = 10;
     [SerializeField] public float accel = 1;
     [SerializeField] public float runMult = 2;
     [SerializeField] public float slideSpeed = 50;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
+    public int shotForce = 250;
+    public int shotTimer = 20;
+    public int numShots = 3;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
@@ -20,7 +26,7 @@ public class PlayerCode : MonoBehaviour
     Rigidbody2D _rigidbody;
     Animator _animator;
     SpriteRenderer _renderer;
-    public Transform fireLoc;
+    
     Vector2 spawnPoint;
     bool isDead = false;
     bool sliding = false;
@@ -59,9 +65,12 @@ public class PlayerCode : MonoBehaviour
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && numShots > 0 && shotTimer <= 0)
         {  
             _animator.SetTrigger("Shoot");
+            GameObject newShot = Instantiate(shotPrefab, fireLoc.position, Quaternion.identity);
+            newShot.GetComponent<Rigidbody2D>().AddForce(shotForce * new Vector2(transform.localScale.x, 0));
+            shotTimer = 20;
         }
         else { _animator.ResetTrigger("Shoot"); }
 
@@ -70,6 +79,7 @@ public class PlayerCode : MonoBehaviour
             
             sliding = true;
             _animator.SetBool("Slide", sliding);
+            Debug.Log("Slide start");
             
             if (xSpeed > 0) 
             {
@@ -85,6 +95,7 @@ public class PlayerCode : MonoBehaviour
         {
             sliding = false;
             _animator.SetBool("Slide", sliding);
+            Debug.Log("Slide end");
         }
     }
 
@@ -104,7 +115,7 @@ public class PlayerCode : MonoBehaviour
             transform.localScale *= new Vector2 (-1, 1);
         }
 
-        
+        if (shotTimer > 0) { shotTimer--; }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

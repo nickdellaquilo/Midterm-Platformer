@@ -66,6 +66,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 313196993909540404}
+  - {fileID: 6564580762843833033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -155,20 +156,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feetTrans: {fileID: 313196993909540404}
+  fireLoc: {fileID: 6564580762843833033}
   groundLayer:
     serializedVersion: 2
     m_Bits: 9
+  shotPrefab: {fileID: 1436330438446564643, guid: 0a6dac9c6bf205349b14ec14d717f8b3, type: 3}
+  meleePrefab: {fileID: 0}
   speed: 10
   accel: 1
   runMult: 2
   slideSpeed: 50
   maxJumps: 1
   jumpForce: 3000
+  shotForce: 500
+  shotTimer: 20
+  numShots: 3
   numJumps: 1
   grounded: 1
-  maxSpeed: 120
-  sspeed: 0
-  fireLoc: {fileID: 0}
 --- !u!61 &4558146753988837345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,3 +315,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &6817775610304673113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6564580762843833033}
+  m_Layer: 0
+  m_Name: fireLoc
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6564580762843833033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6817775610304673113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 0, z: 0}
+  m_LocalScale: {x: 1.8, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1271053429233496844}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
