@@ -23,7 +23,7 @@ public class PlayerCode : MonoBehaviour
     public bool grounded = false;
     private float xSpeed = 0;
     private float ySpeed = 0;
-    Rigidbody2D _rigidbody;
+    private Rigidbody2D _rigidbody;
     Animator _animator;
     SpriteRenderer _renderer;
     
@@ -32,7 +32,7 @@ public class PlayerCode : MonoBehaviour
     bool sliding = false;
     bool running = false;
 
-    void Start()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();

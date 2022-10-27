@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     //referrance added here
     private Animator anim;
     private HealthCode playerHealth;
+    private Health enemyHealth;
 
     private EnemyPatrol enemyPatrol;
 

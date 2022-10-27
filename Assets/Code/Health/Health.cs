@@ -17,16 +17,15 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            //enable this after having the animation
-            anim.SetTrigger("hurt");
+            
         } else {
             if (!dead){
-                //enable this after having the animation
-                anim.SetTrigger("die");
-
+                //for Player
+                if (GetComponent<PlayerCode>() != null)
+                    GetComponent<PlayerCode>().enabled = false;
                 //for Enemy
-                if (GetComponent<EnemyPatrol>() != null)
-                    GetComponent<EnemyPatrol>().enabled = false;
+                if (GetComponentInParent<EnemyPatrol>() != null)
+                    GetComponentInParent<EnemyPatrol>().enabled = false;
                 if (GetComponent<Enemy>() != null)
                     GetComponent<Enemy>().enabled = false;
 
@@ -39,4 +38,5 @@ public class Health : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
 }
