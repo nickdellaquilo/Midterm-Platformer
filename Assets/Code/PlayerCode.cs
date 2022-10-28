@@ -16,7 +16,7 @@ public class PlayerCode : MonoBehaviour
 
     public GameObject bulletPrefab;
 
-    public GameObject[] bullets;
+    public float bulletForce = 10;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
@@ -90,9 +90,9 @@ public class PlayerCode : MonoBehaviour
 
     private void Shoot() 
     {
-        Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
-        bullets[0].transform.position = fireLoc.position;
-        bullets[0].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
+        GameObject newBullet = Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
+        newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x, 0) * bulletForce);
+
     }
 
     public void gameOver() {

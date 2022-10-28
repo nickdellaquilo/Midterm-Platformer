@@ -398,6 +398,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: fireLoc
+      value: 
+      objectReference: {fileID: 1524483572}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: hpMechanic
       value: 
       objectReference: {fileID: 1524483587}
@@ -406,9 +410,17 @@ PrefabInstance:
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: bulletForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: ammoMechanic
       value: 
       objectReference: {fileID: 1524483586}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: healthsystem
       value: 
@@ -424,23 +436,23 @@ PrefabInstance:
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bullets.Array.data[0]
       value: 
-      objectReference: {fileID: 8347329372413234060}
+      objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bullets.Array.data[1]
       value: 
-      objectReference: {fileID: 8347329372413234060}
+      objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bullets.Array.data[2]
       value: 
-      objectReference: {fileID: 8347329372413234060}
+      objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bullets.Array.data[3]
       value: 
-      objectReference: {fileID: 8347329372413234060}
+      objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bullets.Array.data[4]
       value: 
-      objectReference: {fileID: 8347329372413234060}
+      objectReference: {fileID: 0}
     - target: {fileID: 6001951833799260921, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2109,6 +2121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 5631529160599040672, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
+      propertyPath: m_Mass
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6906323628583702086, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -2119,7 +2135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6906323628583702086, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 6906323628583702086, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2155,8 +2171,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
---- !u!1 &8347329372413234060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2474270568816806343, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
-  m_PrefabInstance: {fileID: 8347329372413234059}
-  m_PrefabAsset: {fileID: 0}
