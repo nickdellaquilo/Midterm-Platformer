@@ -8,7 +8,7 @@ public class PlayerCode : MonoBehaviour
     public LayerMask groundLayer;
     [SerializeField] public float speed = 10;
     [SerializeField] public float accel = 1;
-    [SerializeField] public float runMult = 2;
+    [SerializeField] public float runMult = 1.2f;
     [SerializeField] public float slideForce = 500;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 3000;
