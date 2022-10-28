@@ -13,7 +13,9 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 3000;
 
-    [SerializeField] private GameObject[] bullets;
+    public GameObject bulletPrefab;
+
+    public GameObject[] bullets;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
@@ -87,6 +89,7 @@ public class PlayerCode : MonoBehaviour
 
     private void Shoot() 
     {
+        Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
         bullets[0].transform.position = fireLoc.position;
         bullets[0].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
