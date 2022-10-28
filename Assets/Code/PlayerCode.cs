@@ -95,9 +95,7 @@ public class PlayerCode : MonoBehaviour
 
     }
 
-    public void gameOver() {
-        //go to game over scene
-    }
+    
 
     void FixedUpdate()
     {
@@ -159,6 +157,10 @@ public class PlayerCode : MonoBehaviour
         transform.position = spawnPoint;
     }
 
+    public void gameOver() {
+        //go to game over scene
+        SceneManager.LoadScene("Game Over Menu");
+    }
     
     IEnumerator SlideEnd() {
         sliding = true;
