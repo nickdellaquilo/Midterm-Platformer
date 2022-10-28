@@ -109,7 +109,7 @@ public class PlayerCode : MonoBehaviour
             transform.localScale *= new Vector2 (-1, 1);
         }
 
-        
+        _animator.ResetTrigger("Damaged");
     }
 
     public void playDeathAnim() {
@@ -118,15 +118,19 @@ public class PlayerCode : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        /*
         if (other.CompareTag("Checkpoint"))
         {
 
-        }
+        }*/
+
         if (other.tag == "Enemy"){
             hpMechanic.TakeDamage(1);
-            _animator.SetTrigger("damage");
+            _animator.SetTrigger("Damaged");
+            Debug.Log("damage trigger");
         }
     }
+    
 
     IEnumerator PlayerRespawn(Transform other)
     {

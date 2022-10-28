@@ -358,7 +358,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1524483572}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 10
+    OrthographicSize: 15
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -980,6 +980,7 @@ MonoBehaviour:
   - {fileID: 597662721}
   - {fileID: 1552261237}
   - {fileID: 460916612}
+  pcscript: {fileID: 0}
 --- !u!1 &1552261237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1892,10 @@ PrefabInstance:
     - target: {fileID: 198867753934213679, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
       propertyPath: m_Name
       value: EnemyPatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 198867754458337455, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
