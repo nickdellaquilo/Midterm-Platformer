@@ -1066,6 +1066,11 @@ MonoBehaviour:
   - {fileID: 1552261237}
   - {fileID: 460916612}
   pcscript: {fileID: 0}
+--- !u!95 &1527320697 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 198867754458337445, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
+  m_PrefabInstance: {fileID: 198867754564087708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1552261237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1935,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 198867753934213672, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1527320697}
+    - target: {fileID: 198867753934213672, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
+      propertyPath: speed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 198867753934213673, guid: 51f3f494abec320499a67a0c5a5b7810, type: 3}
       propertyPath: m_RootOrder
       value: 6
