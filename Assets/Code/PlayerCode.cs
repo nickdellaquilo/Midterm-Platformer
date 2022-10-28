@@ -78,11 +78,13 @@ public class PlayerCode : MonoBehaviour
             
             if (xSpeed > 0) 
             {
-                _rigidbody.AddForce(Vector2.right * slideForce);
+                //_rigidbody.AddForce(Vector2.right * slideForce);
+                xSpeed = 50;
             }
             else
             {
-                _rigidbody.AddForce(Vector2.left  * slideForce);
+                //_rigidbody.AddForce(Vector2.left  * slideForce);
+                xSpeed = -50;
             }
             Debug.Log(xSpeed);
         }
