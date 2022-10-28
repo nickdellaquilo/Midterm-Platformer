@@ -82,7 +82,8 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
-            Shoot();
+            StartCoroutine(BulletDelay());
+            
             //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
@@ -99,6 +100,7 @@ public class PlayerCode : MonoBehaviour
 
     private void Shoot() 
     {
+        
         GameObject newBullet = Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
         newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x, 0) * bulletForce);
 
@@ -151,8 +153,8 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
-            _animator.SetTrigger("Dead");
-            SceneManager.LoadScene("Game Over Menu");
+            hpMechanic.TakeDamage(1);
+            StartCoroutine(PlayerRespawn());
         }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
@@ -189,5 +191,10 @@ public class PlayerCode : MonoBehaviour
         
     }
     
+    IEnumerator BulletDelay() {
+        
+        yield return new WaitForSeconds(0.6f);
+        Shoot();
+    }
 
 }
