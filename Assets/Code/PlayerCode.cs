@@ -137,8 +137,8 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
-            hpMechanic.TakeDamage(1);
-            StartCoroutine(PlayerRespawn());
+            _animator.SetTrigger("Dead");
+            SceneManager.LoadScene("Game Over Menu");
         }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
