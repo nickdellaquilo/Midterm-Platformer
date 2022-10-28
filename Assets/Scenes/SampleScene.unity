@@ -232,7 +232,7 @@ GameObject:
   m_Layer: 0
   m_Name: Right_Side
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -368,8 +368,8 @@ MonoBehaviour:
   rightEdge: {fileID: 231569865}
   enemy: {fileID: 789822153}
   speed: 10
-  idleDuration: 0
-  anim: {fileID: 0}
+  idleDuration: 1
+  anim: {fileID: 789822157}
 --- !u!4 &477838202
 Transform:
   m_ObjectHideFlags: 0
@@ -603,7 +603,7 @@ GameObject:
   m_Layer: 0
   m_Name: Left_Side
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -635,9 +635,10 @@ GameObject:
   - component: {fileID: 789822155}
   - component: {fileID: 789822154}
   - component: {fileID: 789822156}
+  - component: {fileID: 789822157}
   m_Layer: 7
   m_Name: Platform Enemy Robo Spider Correct Size.png
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -754,7 +755,7 @@ MonoBehaviour:
   boxCollider: {fileID: 789822154}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &789822156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -768,6 +769,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 1
+--- !u!95 &789822157
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789822149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c37dc46330013e346aec1ccfe99f8ca1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &803352311
 GameObject:
   m_ObjectHideFlags: 0
