@@ -14,6 +14,10 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 3000;
 
+    [SerializeField] AudioSource jumpSound;
+    [SerializeField] AudioSource shootSound;
+    //AudioSource audioSource;
+
     public GameObject bulletPrefab;
 
     //BoxCollider2D collider = GetComponent<BoxCollider2D>();
@@ -67,6 +71,7 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded && !sliding)
         {
+            shootSound.PlayOneShot(jumpSound.clip, 1);
             _animator.SetBool("Jump", true);
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
         }
@@ -76,7 +81,8 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
-            Shoot();
+            StartCoroutine(BulletDelay());
+            
             //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
@@ -93,6 +99,7 @@ public class PlayerCode : MonoBehaviour
 
     private void Shoot() 
     {
+        
         GameObject newBullet = Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
         newBullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(transform.localScale.x, 0) * bulletForce);
 
@@ -145,8 +152,8 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
-            _animator.SetTrigger("Dead");
-            SceneManager.LoadScene("Game Over Menu");
+            hpMechanic.TakeDamage(1);
+            StartCoroutine(PlayerRespawn());
         }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
@@ -183,5 +190,11 @@ public class PlayerCode : MonoBehaviour
         
     }
     
+    IEnumerator BulletDelay() {
+        
+        yield return new WaitForSeconds(0.6f);
+        shootSound.PlayOneShot(shootSound.clip, 1);
+        Shoot();
+    }
 
 }
