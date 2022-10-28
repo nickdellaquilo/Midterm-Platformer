@@ -112,11 +112,11 @@ public class PlayerCode : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        /*
-        if (other.CompareTag("Checkpoint"))
+        
+        if (other.tag == ("Checkpoint"))
         {
-
-        }*/
+            Debug.Log("For The Emperor!");
+        }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
         }
