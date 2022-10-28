@@ -8,7 +8,7 @@ public class DoorCode : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")) {
-                
+                Debug.Log("Made It!");
                 SceneManager.LoadScene(levelName);
             }
             
