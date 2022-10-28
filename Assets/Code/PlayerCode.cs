@@ -12,12 +12,16 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public float slideForce = 500;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 3000;
+
+    [SerializeField] private GameObject[] bullets;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
     private float xSpeed = 0;
     private float ySpeed = 0;
     private Rigidbody2D _rigidbody;
+
+    private Animator anim;
     Animator _animator;
     SpriteRenderer _renderer;
     public Transform fireLoc;
@@ -66,6 +70,7 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
+            Shoot();
             //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
@@ -78,6 +83,12 @@ public class PlayerCode : MonoBehaviour
             
         }
         
+    }
+
+    private void Shoot() 
+    {
+        bullets[0].transform.position = fireLoc.position;
+        bullets[0].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
     }
 
     void FixedUpdate()
