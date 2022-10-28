@@ -55,7 +55,7 @@ public class PlayerCode : MonoBehaviour
             running = false;
         }
 
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && grounded && !sliding)
         {
             _animator.SetBool("Jump", true);
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
@@ -72,27 +72,12 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButtonDown("Slide") && grounded ) //&& Mathf.Abs(xSpeed) >= speed
         {
-            
-            sliding = true;
-            _animator.SetBool("Slide", sliding);
-            
-            if (xSpeed > 0) 
-            {
-                //_rigidbody.AddForce(Vector2.right * slideForce);
-                xSpeed = 50;
+            if (!sliding) {
+                runSlideAnim();
             }
-            else
-            {
-                //_rigidbody.AddForce(Vector2.left  * slideForce);
-                xSpeed = -50;
-            }
-            Debug.Log(xSpeed);
+            
         }
-        if (Mathf.Abs(xSpeed) <= speed)
-        {
-            sliding = false;
-            _animator.SetBool("Slide", sliding);
-        }
+        
     }
 
     void FixedUpdate()
@@ -115,6 +100,12 @@ public class PlayerCode : MonoBehaviour
         _animator.ResetTrigger("Dead");
     }
 
+    public void runSlideAnim() {
+        
+        StartCoroutine(SlideEnd());
+
+    }
+
     public void playDeathAnim() {
         _animator.SetTrigger("Dead");
     }
@@ -127,7 +118,7 @@ public class PlayerCode : MonoBehaviour
 
         }*/
 
-        if (other.tag == "Enemy"){
+        if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
             _animator.SetTrigger("Damaged");
             Debug.Log("damage trigger");
@@ -143,11 +134,19 @@ public class PlayerCode : MonoBehaviour
         spawnPoint = other.transform.position;
     }
 
-    /*
+    
     IEnumerator SlideEnd() {
-        yield return new WaitForSeconds(0.5f);
-        _animator.Play("Idle");
+        sliding = true;
+        _animator.SetBool("Slide", sliding);
+        
+        Debug.Log(xSpeed);
+        
+        yield return new WaitForSeconds(0.75f);
+        Debug.Log("Reached");
+        sliding = false;
+        _animator.SetBool("Slide", false);
+        
     }
-    */
+    
 
 }
