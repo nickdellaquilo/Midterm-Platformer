@@ -9,7 +9,7 @@ public class HealthCode : MonoBehaviour
     [SerializeField] public GameObject[] hearts;
     private int life;
     private bool dead;
-    private Animator anim;
+    Animator anim;
 
     private void Start()
     {
