@@ -16,6 +16,9 @@ public class PlayerCode : MonoBehaviour
 
     public GameObject bulletPrefab;
 
+    //BoxCollider2D collider = GetComponent<BoxCollider2D>();
+    //Vector2 collider_default_size = new Vector2 (collider.size.x, collider.size.y);
+
     public float bulletForce = 10;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
@@ -53,7 +56,7 @@ public class PlayerCode : MonoBehaviour
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
 
-        if (Input.GetButton("Run") && !sliding)
+        if (Input.GetButton("Run") && !sliding && grounded)
         {
             running = true;
         }
@@ -103,8 +106,13 @@ public class PlayerCode : MonoBehaviour
         {
             xSpeed = Input.GetAxisRaw("Horizontal") * speed;
             if (running) { xSpeed *= runMult; }
+            //GetComponent<Collider>().size = new Vector2(GetComponent<Collider>().size.x, 3);
         }
-        else { xSpeed = Mathf.Lerp(xSpeed, speed, 0.025f); }
+        else
+        {
+            xSpeed = Mathf.Lerp(xSpeed, speed, 0.025f);
+            //GetComponent<Collider>().size = new Vector2(GetComponent<Collider>().size.x, 1.5);
+        }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
 
