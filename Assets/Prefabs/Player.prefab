@@ -169,7 +169,7 @@ MonoBehaviour:
   jumpSound: {fileID: 2387483057443900424}
   shootSound: {fileID: 1814673420579976776}
   bulletPrefab: {fileID: 2474270568816806343, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
-  bulletForce: 10
+  bulletForce: 50
   numJumps: 1
   grounded: 1
   fireLoc: {fileID: 362096240240869573}
@@ -233,7 +233,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9183fe6604a6d4a67a11c6ebd46d1477, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.251
+  m_Volume: 0.192
   m_Pitch: 1
   Loop: 0
   Mute: 0
