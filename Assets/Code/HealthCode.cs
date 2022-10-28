@@ -10,6 +10,7 @@ public class HealthCode : MonoBehaviour
     private int life;
     private bool dead;
     Animator anim;
+    public PlayerCode pcscript;
 
     private void Start()
     {
@@ -20,16 +21,18 @@ public class HealthCode : MonoBehaviour
     {
         if (dead)
         {
+            //anim.SetTrigger("death");
             //implement death sequence
+            pcscript.playDeathAnim();
             
         }
     }
 
     public void TakeDamage(int damage) {
-        if (life >= 1)
+        if (life > 0)
         {
             
-            life -= damage;
+            life--;
             hearts[life].gameObject.SetActive(false);
             
             if (life < 1)

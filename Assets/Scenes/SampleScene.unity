@@ -179,6 +179,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: hpMechanic
+      value: 
+      objectReference: {fileID: 1524483587}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: slideForce
       value: 5000
       objectReference: {fileID: 0}

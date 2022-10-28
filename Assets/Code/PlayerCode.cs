@@ -112,6 +112,10 @@ public class PlayerCode : MonoBehaviour
         
     }
 
+    public void playDeathAnim() {
+        _animator.SetTrigger("death");
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Checkpoint"))
@@ -120,6 +124,7 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Enemy"){
             hpMechanic.TakeDamage(1);
+            _animator.SetTrigger("damage");
         }
     }
 
