@@ -6,7 +6,8 @@ public class DoorCode : MonoBehaviour
 {
     public string levelName = "Scene2";
     
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("hit");
         if(other.CompareTag("Player")) {
                 Debug.Log("Made It!");
                 SceneManager.LoadScene(levelName);
