@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public void Play(){
-        SceneManager.LoadScene("SampleScene");
+        //SceneChanger.PreviousScene();
     }
 
     public void Quit(){
