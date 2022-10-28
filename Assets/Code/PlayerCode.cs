@@ -73,7 +73,7 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
-            Shoot();
+            StartCoroutine(BulletDelay());
             //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
@@ -81,6 +81,7 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Slide") && grounded ) //&& Mathf.Abs(xSpeed) >= speed
         {
             if (!sliding) {
+                //ammoMechanic.Fire(1);
                 runSlideAnim();
             }
             
@@ -147,6 +148,12 @@ public class PlayerCode : MonoBehaviour
         }
     }
     
+    IEnumerator BulletDelay() {
+        
+        yield return new WaitForSeconds(0.6f);
+        Shoot();
+        
+    }
 
     IEnumerator PlayerRespawn()
     {
