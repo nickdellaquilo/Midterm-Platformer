@@ -20,11 +20,15 @@
 ### [Task Log](https://github.com/nickdellaquilo/Midterm-Platformer/tree/main#task-log-1)
 
 ### Design
-- [ ] Player character
-  - [ ] Movement
+- [x] Player character
+  - [x] Movement
     - [x] Basic walking & jumping
+    - [x] Slide
+  - [x] Attacks
+    - [x] Melee
+    - [x] Shoot
 - [ ] Obstacles
-  - [ ] Enemies
+  - [x] Enemies
   - [ ] Environment
 - [ ] Levels
   - [ ] At least 1 Easy level
@@ -35,9 +39,10 @@
 - [ ] Player character
   - [ ] Movement
     - [x] Basic walking & jumping
-  - [ ] Player input
-    - [ ] Keyboard
-    - [ ] Gamepad
+    - [ ] Slide
+  - [x] Player input
+    - [x] Keyboard
+    - [x] Gamepad
 - [ ] Obstacles
   - [x] Enemies
   - [ ] Environment
@@ -51,7 +56,7 @@
 - [x] Player character
   - [x] Idle
   - [x] Run
-  - [ ] Jump
+  - [x] Jump
   - [x] Damage
 - [ ] Levels
   - [ ] Terrain
