@@ -420,7 +420,7 @@ PrefabInstance:
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1868674285}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: healthsystem
       value: 
@@ -1343,6 +1343,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 774427005947466031, guid: 6e0276ce0b640594ebc502467ea1efce, type: 3}
   m_PrefabInstance: {fileID: 774427005334745434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1868674285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2474270568816806343, guid: 9974a84f590a84cd2a47b5a0848bb913, type: 3}
+  m_PrefabInstance: {fileID: 8347329372413234059}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1930172774
 PrefabInstance:
