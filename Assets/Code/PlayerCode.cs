@@ -11,7 +11,7 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public float runMult = 2;
     [SerializeField] public float slideForce = 500;
     [SerializeField] public int maxJumps = 1;
-    [SerializeField] public int jumpForce = 2500;
+    [SerializeField] public int jumpForce = 3000;
     public int numJumps = 0;
     //[SerializeField] int coyoteTime = 8;
     public bool grounded = false;
