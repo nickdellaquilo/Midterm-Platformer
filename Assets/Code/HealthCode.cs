@@ -25,8 +25,7 @@ public class HealthCode : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         if (life >= 1)
         {
             life -= damage;
@@ -36,6 +35,14 @@ public class HealthCode : MonoBehaviour
                 dead = true;
             }
             
+        }
+    }
+
+    public void RestoreHealth(int damage) {
+        if (life < 5)
+        {
+            life += damage;
+            hearts[life].gameObject.SetActive(true);
         }
     }
 }
