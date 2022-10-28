@@ -113,7 +113,7 @@ public class PlayerCode : MonoBehaviour
     }
 
     public void playDeathAnim() {
-        _animator.SetTrigger("death");
+        _animator.SetTrigger("Dead");
     }
     
     private void OnTriggerEnter2D(Collider2D other)
