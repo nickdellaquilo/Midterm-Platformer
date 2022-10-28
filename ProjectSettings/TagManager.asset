@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Deathbox
   - Checkpoint
+  - Door
   layers:
   - Default
   - TransparentFX

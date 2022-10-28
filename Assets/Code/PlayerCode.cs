@@ -127,6 +127,7 @@ public class PlayerCode : MonoBehaviour
         if (other.tag == ("Checkpoint"))
         {
             Debug.Log("For The Emperor!");
+            spawnPoint = other.transform.position;
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
