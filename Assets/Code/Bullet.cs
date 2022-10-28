@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     private bool hit;
     private float direction;
 
-    private Animator anim;
+    //private Animator anim;
     private BoxCollider2D boxCollider;
 
     public Rigidbody2D rb;
@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
 
     }
