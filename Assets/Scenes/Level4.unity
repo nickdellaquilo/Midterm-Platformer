@@ -2403,11 +2403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 774427005689028515, guid: 6e0276ce0b640594ebc502467ea1efce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.10780358
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 774427005689028515, guid: 6e0276ce0b640594ebc502467ea1efce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 774427005689028515, guid: 6e0276ce0b640594ebc502467ea1efce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3200,11 +3200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1271053429233496844, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.10780358
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 1271053429233496844, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1271053429233496844, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4614,7 +4614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522400091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10780358, y: -0.08, z: -10}
+  m_LocalPosition: {x: 1.3, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5010,7 +5010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b16a06366919946b2f65277d7f71b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: LevelEnd
+  levelName: Victory
 --- !u!212 &1657421912
 SpriteRenderer:
   m_ObjectHideFlags: 0
