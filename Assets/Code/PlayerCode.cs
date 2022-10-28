@@ -56,7 +56,7 @@ public class PlayerCode : MonoBehaviour
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
 
-        if (Input.GetButton("Run") && !sliding && grounded)
+        if (Input.GetButton("Run") && !sliding) //&& grounded
         {
             running = true;
         }
@@ -76,7 +76,7 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
-            StartCoroutine(BulletDelay());
+            Shoot();
             //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
@@ -84,7 +84,6 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Slide") && grounded ) //&& Mathf.Abs(xSpeed) >= speed
         {
             if (!sliding) {
-                //ammoMechanic.Fire(1);
                 runSlideAnim();
             }
             
@@ -112,7 +111,7 @@ public class PlayerCode : MonoBehaviour
         else
         {
             xSpeed = Mathf.Lerp(xSpeed, speed, 0.025f);
-            //GetComponent<Collider>().size = new Vector2(GetComponent<Collider>().size.x, 1.5);
+            //<Collider>().size = new Vector2(GetComponent<Collider>().size.x, 1.5);
         }
 
         _rigidbody.velocity = new Vector2(xSpeed, ySpeed);
@@ -146,8 +145,8 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
-            hpMechanic.TakeDamage(1);
-            StartCoroutine(PlayerRespawn());
+            _animator.SetTrigger("Dead");
+            SceneManager.LoadScene("Game Over Menu");
         }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
@@ -156,12 +155,6 @@ public class PlayerCode : MonoBehaviour
         }
     }
     
-    IEnumerator BulletDelay() {
-        
-        yield return new WaitForSeconds(0.6f);
-        Shoot();
-        
-    }
 
     IEnumerator PlayerRespawn()
     {
