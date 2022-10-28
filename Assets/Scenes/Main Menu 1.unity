@@ -730,18 +730,18 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Controls
 
-    MOVE : A / D
+    MOVE : A / D | Left stick
 
-    SLIDE - S
+    SLIDE - S | LB
 
-    RUN - Shift
+    RUN -
+    Shift | B
 
-    JUMP -
-    Space
+    JUMP - Space | A
 
-    SHOOT - M1
+    SHOOT - M1 | RB
 
-    QUIT - Esc'
+    QUIT - Esc | Start'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
