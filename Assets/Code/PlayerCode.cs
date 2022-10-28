@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCode : MonoBehaviour
 {
@@ -92,6 +93,10 @@ public class PlayerCode : MonoBehaviour
         Instantiate(bulletPrefab, fireLoc.position, fireLoc.rotation);
         bullets[0].transform.position = fireLoc.position;
         bullets[0].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
+
+    public void gameOver() {
+        //go to game over scene
     }
 
     void FixedUpdate()

@@ -17,30 +17,24 @@ public class HealthCode : MonoBehaviour
         life = hearts.Length;
     }
 
-    void Update()
-    {
-        if (dead)
+    private void Update() {
+        if (life == 0)
         {
-            //anim.SetTrigger("death");
-            //implement death sequence
-            pcscript.playDeathAnim();
-            
+            pcscript.gameOver();
         }
     }
 
     public void TakeDamage(int damage) {
         if (life > 0)
         {
-            
             life--;
             hearts[life].gameObject.SetActive(false);
-            
-            if (life < 1)
-            {
-                dead = true;
-            }
-            
         }
+        if (life == 0)
+            {
+                pcscript.playDeathAnim();
+                pcscript.gameOver();
+            }
     }
 
     public void RestoreHealth(int damage) {

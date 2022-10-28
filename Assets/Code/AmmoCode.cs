@@ -30,7 +30,7 @@ public class AmmoCode : MonoBehaviour
     public void Fire(int ammoConsumed)
     {
         Debug.Log("AmmoEaten");
-        if (bullets >= ammoConsumed)
+        if (ammoConsumed > 0)
         {
             bullets -= ammoConsumed;
             ammo[bullets].gameObject.SetActive(false);
