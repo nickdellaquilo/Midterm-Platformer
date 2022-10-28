@@ -131,6 +131,8 @@ public class PlayerCode : MonoBehaviour
         }
         if (other.tag == "Deathbox") {
             Debug.Log("Death!");
+            hpMechanic.TakeDamage(1);
+            StartCoroutine(PlayerRespawn());
         }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
@@ -140,12 +142,13 @@ public class PlayerCode : MonoBehaviour
     }
     
 
-    IEnumerator PlayerRespawn(Transform other)
+    IEnumerator PlayerRespawn()
     {
         isDead = true;
-        yield return new WaitForSeconds(0.5f);
+        _animator.SetTrigger("Dead");
+        yield return new WaitForSeconds(1f);
         isDead = false;
-        spawnPoint = other.transform.position;
+        transform.position = spawnPoint;
     }
 
     
