@@ -14,6 +14,10 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 3000;
 
+    [SerializeField] AudioSource jumpSound;
+    [SerializeField] AudioSource shootSound;
+    //AudioSource audioSource;
+
     public GameObject bulletPrefab;
 
     //BoxCollider2D collider = GetComponent<BoxCollider2D>();
@@ -67,12 +71,14 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded && !sliding)
         {
+            shootSound.PlayOneShot(jumpSound.clip, 1);
             _animator.SetBool("Jump", true);
             _rigidbody.AddForce(new Vector2(_rigidbody.velocity.x, jumpForce));
         }
 
         if (Input.GetButtonDown("Fire1"))
         {  
+            shootSound.PlayOneShot(shootSound.clip, 1);
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
