@@ -315,6 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdec2eee3197d43efac3db9a6af6d802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoMech: {fileID: 1524483586}
+  hpMech: {fileID: 1524483587}
   rb: {fileID: 214797079}
 --- !u!61 &214797078
 BoxCollider2D:

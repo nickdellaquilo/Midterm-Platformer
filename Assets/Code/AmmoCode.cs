@@ -18,11 +18,12 @@ public class AmmoCode : MonoBehaviour
     }
 
     public void reload(int ammoRestored) {
-        bullets += ammoRestored;
-        if (bullets > ammoMax) {
-            bullets = ammoMax;
+        
+        if (bullets < 5) {
+            bullets += ammoRestored;
+            ammo[bullets].gameObject.SetActive(true);
         }
-        ammo[bullets].gameObject.SetActive(true);
+        
     }
 
     public void Fire(int ammoConsumed)
