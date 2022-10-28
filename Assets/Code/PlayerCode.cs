@@ -60,6 +60,11 @@ public class PlayerCode : MonoBehaviour
         _animator.SetFloat("ySpeed", Mathf.Abs(ySpeed));
         _animator.SetBool("Slide", sliding);
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (Input.GetButton("Run") && !sliding) //&& grounded
         {
             running = true;
