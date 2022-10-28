@@ -8,12 +8,12 @@ public class DoorCode : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("hit");
-        if(other.CompareTag("Player")) {
-                Debug.Log("Made It!");
-                SceneManager.LoadScene(levelName);
-            }
-            
+        if(other.tag == "Player") {
+            Debug.Log("Made It!");
+            SceneManager.LoadScene(levelName);
         }
+        
+    }
     
     // Start is called before the first frame update
     void Start()
