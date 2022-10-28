@@ -27,6 +27,7 @@ public class AmmoCode : MonoBehaviour
 
     public void Fire(int ammoConsumed)
     {
+        Debug.Log("AmmoEaten");
         if (bullets >= ammoConsumed)
         {
             bullets -= ammoConsumed;

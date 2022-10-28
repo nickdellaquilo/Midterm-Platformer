@@ -25,6 +25,7 @@ public class PlayerCode : MonoBehaviour
     bool isDead = false;
     bool sliding = false;
     bool running = false;
+    public AmmoCode ammoMechanic;
 
     private void Awake()
     {
@@ -62,6 +63,8 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {  
             _animator.SetTrigger("Shoot");
+            Debug.Log("Shooting1");
+            ammoMechanic.Fire(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
 
