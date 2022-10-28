@@ -7,7 +7,7 @@ public class PlayerCode : MonoBehaviour
 {
     public Transform feetTrans;
     public LayerMask groundLayer;
-    [SerializeField] public float speed = 10;
+    [SerializeField] public float speed = 10f;
     [SerializeField] public float accel = 1;
     [SerializeField] public float runMult = 1.2f;
     [SerializeField] public float slideForce = 500;
