@@ -20,8 +20,9 @@ public class AmmoCode : MonoBehaviour
     public void reload(int ammoRestored) {
         
         if (bullets < 5) {
-            bullets += ammoRestored;
             ammo[bullets].gameObject.SetActive(true);
+            bullets += ammoRestored;
+            
         }
         
     }

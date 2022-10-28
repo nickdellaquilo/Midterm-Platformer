@@ -41,8 +41,9 @@ public class HealthCode : MonoBehaviour
     public void RestoreHealth(int damage) {
         if (life < 5)
         {
-            life += damage;
             hearts[life].gameObject.SetActive(true);
+            life += damage;
+            
         }
     }
 }
