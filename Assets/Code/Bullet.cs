@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] public float speed;
+    public float speed = 20f;
     private bool hit;
     private float direction;
 
     private Animator anim;
     private BoxCollider2D boxCollider;
+
+    public Rigidbody2D rb;
+
+    private float lifetime;
 
     private void Awake()
     {
@@ -20,12 +24,19 @@ public class Bullet : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        rb.velocity = transform.right * speed * Time.deltaTime * transform.localScale.x;
+    }
+
+
     private void Update()
     {
         if (hit) return;
-        float movementSpeed = speed * Time.deltaTime;
-        transform.Translate(movementSpeed, 0, 0);
-
+ 
+        transform.Translate(transform.right * speed * Time.deltaTime * transform.localScale.x);
+        lifetime += Time.deltaTime;
+        if (lifetime > 5) gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -43,6 +54,7 @@ public class Bullet : MonoBehaviour
         gameObject.SetActive(true);
         hit = false;
         boxCollider.enabled = true;
+        lifetime = 0;
 
         float localScaleX = transform.localScale.x;
         if (Mathf.Sign(localScaleX) != _direction) 
