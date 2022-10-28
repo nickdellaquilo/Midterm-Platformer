@@ -179,6 +179,14 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: slideForce
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
+      propertyPath: ammoMechanic
+      value: 
+      objectReference: {fileID: 1524483586}
+    - target: {fileID: 5568317704095726161, guid: b5f2c31082c430d48b519c9248ab64aa, type: 3}
       propertyPath: healthsystem
       value: 
       objectReference: {fileID: 1524483579}
@@ -932,6 +940,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+--- !u!114 &1524483586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307404730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41891d255821416479e0798ee1922783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo:
+  - {fileID: 2059197234}
+  - {fileID: 2118997610}
+  - {fileID: 1097006739}
+  - {fileID: 1969983464}
+  - {fileID: 1456097254}
+--- !u!114 &1524483587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307404730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0b56a6404b985468c29eebce423e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 1521480271}
+  - {fileID: 2099863314}
+  - {fileID: 597662721}
+  - {fileID: 1552261237}
+  - {fileID: 460916612}
 --- !u!1 &1552261237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,13 +1110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63a25a26b3ec54419ea1670444c8f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1524483579}
-  healthbar1: {fileID: 1521480272}
-  healthbar2: {fileID: 2099863315}
-  healthbar3: {fileID: 597662722}
-  healthbar4: {fileID: 1552261238}
-  healthbar5: {fileID: 460916613}
-  player1: {fileID: 0}
 --- !u!1001 &1680314093
 PrefabInstance:
   m_ObjectHideFlags: 0

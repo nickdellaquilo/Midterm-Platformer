@@ -9,7 +9,7 @@ public class PlayerCode : MonoBehaviour
     [SerializeField] public float speed = 10;
     [SerializeField] public float accel = 1;
     [SerializeField] public float runMult = 2;
-    [SerializeField] public float slideSpeed = 50;
+    [SerializeField] public float slideForce = 500;
     [SerializeField] public int maxJumps = 1;
     [SerializeField] public int jumpForce = 2500;
     public int numJumps = 0;
@@ -25,6 +25,7 @@ public class PlayerCode : MonoBehaviour
     bool isDead = false;
     bool sliding = false;
     bool running = false;
+    public AmmoCode ammoMechanic;
 
     private void Awake()
     {
@@ -62,10 +63,12 @@ public class PlayerCode : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {  
             _animator.SetTrigger("Shoot");
+            Debug.Log("Shooting1");
+            ammoMechanic.Fire(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
 
-        if (Input.GetButtonDown("Slide") && grounded && Mathf.Abs(xSpeed) >= speed)
+        if (Input.GetButtonDown("Slide") && grounded ) //&& Mathf.Abs(xSpeed) >= speed
         {
             
             sliding = true;
@@ -73,11 +76,11 @@ public class PlayerCode : MonoBehaviour
             
             if (xSpeed > 0) 
             {
-                _rigidbody.AddForce(Vector2.right * slideSpeed);
+                _rigidbody.AddForce(Vector2.right * slideForce);
             }
             else
             {
-                _rigidbody.AddForce(Vector2.left  * slideSpeed);
+                _rigidbody.AddForce(Vector2.left  * slideForce);
             }
             Debug.Log(xSpeed);
         }
