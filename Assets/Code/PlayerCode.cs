@@ -78,7 +78,6 @@ public class PlayerCode : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {  
-            shootSound.PlayOneShot(shootSound.clip, 1);
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
@@ -194,6 +193,7 @@ public class PlayerCode : MonoBehaviour
     IEnumerator BulletDelay() {
         
         yield return new WaitForSeconds(0.6f);
+        shootSound.PlayOneShot(shootSound.clip, 1);
         Shoot();
     }
 
