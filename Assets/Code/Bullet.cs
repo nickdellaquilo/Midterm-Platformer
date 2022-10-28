@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] public float speed;
     private bool hit;
+    private float direction;
 
     private Animator anim;
     private BoxCollider2D boxCollider;
