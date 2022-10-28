@@ -26,6 +26,7 @@ public class PlayerCode : MonoBehaviour
     bool sliding = false;
     bool running = false;
     public AmmoCode ammoMechanic;
+    public HealthCode hpMechanic;
 
     private void Awake()
     {
@@ -65,6 +66,7 @@ public class PlayerCode : MonoBehaviour
             _animator.SetTrigger("Shoot");
             Debug.Log("Shooting1");
             ammoMechanic.Fire(1);
+            //hpMechanic.TakeDamage(1);
         }
         else { _animator.ResetTrigger("Shoot"); }
 

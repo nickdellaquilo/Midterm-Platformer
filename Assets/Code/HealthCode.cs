@@ -28,8 +28,9 @@ public class HealthCode : MonoBehaviour
     public void TakeDamage(int damage) {
         if (life >= 1)
         {
-            hearts[life].gameObject.SetActive(false);
+            
             life -= damage;
+            hearts[life].gameObject.SetActive(false);
             
             if (life < 1)
             {
