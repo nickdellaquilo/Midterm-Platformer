@@ -119,7 +119,7 @@ public class PlayerCode : MonoBehaviour
 
         }
         if (other.tag == "Enemy"){
-            other.GetComponent<Health>().TakeDamage(1);
+            hpMechanic.TakeDamage(1);
         }
     }
 
