@@ -117,7 +117,9 @@ public class PlayerCode : MonoBehaviour
         {
 
         }*/
-
+        if (other.tag == "Deathbox") {
+            Debug.Log("Death!");
+        }
         if (other.tag == "Enemy" && !sliding){
             hpMechanic.TakeDamage(1);
             _animator.SetTrigger("Damaged");
