@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class FallingPlatform : MonoBehaviour
 {
-    /*
+    [SerializeField] private Rigidbody2D rb;
+
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //GetComponent<Rigidbody2D>();
-
-        
+        if (other.gameObject.CompareTag("Player")){
+            Invoke ("Drop", 0.5f);
+            Destroy(gameObject, 1f);
+        }
     }
-    */
+
+    private void Drop(){
+        rb.isKinematic = false;
+    }
+
+    
+    
 }

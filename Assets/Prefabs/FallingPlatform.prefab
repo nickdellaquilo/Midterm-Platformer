@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6959248875318816778}
   - component: {fileID: 2153504905872687378}
   - component: {fileID: 2153504905872687376}
-  - component: {fileID: 2153504905872687383}
   - component: {fileID: 6532994503138792360}
   m_Layer: 3
   m_Name: FallingPlatform
@@ -113,25 +112,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!251 &2153504905872687383
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4641282249705363638}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 0
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!114 &6532994503138792360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1c04e75dc1bb9449a00077334f44be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
