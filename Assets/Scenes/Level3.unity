@@ -254,7 +254,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4495657664704277577, guid: 153b09cebb2ac1247a95b8ed010350a2, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4495657664704277578, guid: 153b09cebb2ac1247a95b8ed010350a2, type: 3}
       propertyPath: hpMech
